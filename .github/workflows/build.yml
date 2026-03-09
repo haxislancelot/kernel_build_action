@@ -5,8 +5,6 @@ on:
 
 jobs:
   Build-Kernel:
-    strategy:
-      fail-fast: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,6 +26,3 @@ jobs:
           aosp-clang-version: r450784d
           disable-lto: true
           anykernel3: true
-          #
-          tg-token: ${{ secrets.TOKEN }}
-          tg-chat-id: ${{ secrets.CHAT_ID }}
