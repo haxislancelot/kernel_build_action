@@ -1,4 +1,3 @@
-# A simple action usage
 name: Build Kernel
 on:
   workflow_dispatch:
@@ -6,23 +5,16 @@ on:
 jobs:
   Build-Kernel:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: Build Kernel
         uses: dabao1955/kernel_build_action@main
         with:
-          kernel-url: https://github.com/ata-kaner/android_kernel_samsung_sm8250
-          kernel-dir: kernel-s20fe
+          kernel-url: https://github.com/ata-kaner/android_kernel_samsung_sm8250.git
           kernel-branch: lineage-22.2
           config: vendor/samsung/r8q.config
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
-          ksu: true
-          ksu-version: main
           android-version: 14
           aosp-clang-version: r450784d
-          disable-lto: true
           anykernel3: true
