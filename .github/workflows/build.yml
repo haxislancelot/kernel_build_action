@@ -9,14 +9,14 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - name: Build Kernel
         uses: dabao1955/kernel_build_action@main
         with:
-          kernel-url: https://github.com/ata-kaner/android_kernel_samsung_sm8250/
-          kernel-dir: msm-4.19
+          kernel-url: https://github.com/ata-kaner/android_kernel_samsung_sm8250
+          kernel-dir: kernel-s20fe
           kernel-branch: lineage-22.2
           config: vendor/samsung/r8q.config
           arch: arm64
@@ -24,7 +24,7 @@ jobs:
           aosp-clang: true
           ksu: true
           ksu-version: main
-          android-version: 12
-          aosp-clang-version: r383902
+          android-version: 14
+          aosp-clang-version: r450784d
           disable-lto: true
           anykernel3: true
